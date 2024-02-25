@@ -32,7 +32,7 @@ To edit the packaged components, you can directly edit the components in the /sr
 npm install @chakra-ui/react
 ```
 
-2. You have to tell npm that the package is coming from the github registry. Create or update existing .npmrc file in the root directory to include the following lines:
+2. You have to tell npm that the package is coming from the github registry. Create or update existing .npmrc file in the root directory and include the following lines:
 
 ```
 @eykam:registry=https://npm.pkg.github.com/
