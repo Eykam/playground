@@ -1,7 +1,7 @@
 {
     "name": "@eykam/playground",
     "description": "Playground embed for Learnprompting.org",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "main": "./index.umd.js",
     "module": "./index.es.js",
     "types": "./index.d.ts",

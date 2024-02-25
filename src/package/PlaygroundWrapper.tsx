@@ -8,15 +8,16 @@ interface PlaygroundProps {
     maxTokens?: number
     temperature?: number
     topP?: number
+    style?: React.CSSProperties
 }
 
-export const PlaygroundWrapper = ({ style }: { style: React.CSSProperties }, props: PlaygroundProps) => {
+export const PlaygroundWrapper = (props: PlaygroundProps) => {
     const getInitalConfig = () => {
         try {
             const defaultConfig: PlaygroundProps = urlConfigSchema.getDefault()
 
             for (const [key, entry] of Object.entries(props)) {
-                if (entry !== undefined) {
+                if (entry !== undefined && key != "style") {
                     defaultConfig[key as keyof PlaygroundProps] = entry
                 }
             }
@@ -29,7 +30,7 @@ export const PlaygroundWrapper = ({ style }: { style: React.CSSProperties }, pro
     const { initialConfig, error } = getInitalConfig()
 
     return (
-        <div style={style}>
+        <div style={props.style}>
             <PlaygroundEmbed initialConfig={initialConfig} error={error} />
         </div>
     )
