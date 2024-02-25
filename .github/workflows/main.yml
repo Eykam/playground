@@ -16,7 +16,9 @@ jobs:
           registry-url: https://npm.pkg.github.com
           scope: '@eykam'
       - run: npm install
-      - run: npm version patch && npm run build && cd dist && npm publish
+      - run : npm version patch
+      - run : npm run build 
+      - run: cd dist && npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
         
