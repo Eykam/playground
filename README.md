@@ -36,8 +36,10 @@ npm install @chakra-ui/react
 
 ```
 @eykam:registry=https://npm.pkg.github.com/
-//npm.pkg.github.com/:_authToken=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
+//npm.pkg.github.com/:_authToken=<TOKEN>
 ```
+
+Where <TOKEN> is a Github PAT with read:packages permissions. (https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-npm-registry)
 
 3. You can now install the package using:
 

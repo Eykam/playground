@@ -10,7 +10,7 @@ interface PlaygroundProps {
     topP?: number
 }
 
-export const PlaygroundWrapper = (props: PlaygroundProps) => {
+export const PlaygroundWrapper = ({ style }: { style: React.CSSProperties }, props: PlaygroundProps) => {
     const getInitalConfig = () => {
         try {
             const defaultConfig: PlaygroundProps = urlConfigSchema.getDefault()
@@ -28,5 +28,9 @@ export const PlaygroundWrapper = (props: PlaygroundProps) => {
 
     const { initialConfig, error } = getInitalConfig()
 
-    return <PlaygroundEmbed initialConfig={initialConfig} error={error} />
+    return (
+        <div style={style}>
+            <PlaygroundEmbed initialConfig={initialConfig} error={error} />
+        </div>
+    )
 }
