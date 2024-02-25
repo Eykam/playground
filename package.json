@@ -11,7 +11,7 @@
     },
     "scripts": {
         "dev": "vite",
-        "build": "tsc && vite build && cp ./package.json ./dist/package.json && cd dist",
+        "build": "tsc && vite build && cp ./package.json ./dist/package.json",
         "preview": "vite preview"
     },
     "dependencies": {
