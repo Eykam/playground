@@ -21,8 +21,7 @@ To edit the packaged components, you can directly edit the components in the /sr
 ## Updating & Publishing Package
 
 1. There is a Github Workflow implemented in the repo to automatically build and publish the package whenever changes are pushed to the main branch
-2. Before committing changes to the main branch, make sure to increment the version number in the package.json, otherwise the publishing workflow will fail. Ex: "version" : "0.0.1" -> "version" : "0.0.2"
-3. After updates are committed and new package is published, make sure to re-run `npm install @eykam/playground@latest` in projects consuming package to get updates
+2. After updates are committed and new package is published, make sure to re-run `npm install @eykam/playground@latest` in projects consuming package to get updates
 
 ## Package usage
 
