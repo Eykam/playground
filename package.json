@@ -11,7 +11,7 @@
     },
     "scripts": {
         "dev": "vite",
-        "build": "tsc && vite build && cp ./package.json ./dist/package.json && cd dist && npm pack",
+        "build": "tsc && vite build && cp ./package.json ./dist/package.json && cd dist",
         "preview": "vite preview"
     },
     "dependencies": {
