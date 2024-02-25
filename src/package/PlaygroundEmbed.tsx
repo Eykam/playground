@@ -1,6 +1,4 @@
-"use client"
 import { useEffect, useState } from "react"
-import { useSearchParamConfig } from "../hooks/useSearchParamConfig"
 import { BASE_URL } from "../main"
 import { encodeUrlConfig, UrlConfig, urlConfigSchema } from "../urlconfig"
 import { Flex, Alert, AlertDescription, AlertIcon, AlertTitle, useToast, useDisclosure } from "@chakra-ui/react"
@@ -11,10 +9,9 @@ import ApiKeyInputModal from "../components/ApiKeyInputModal"
 import Footer from "../components/Footer"
 import Playground from "../components/Playground"
 
-const EmbedPage = () => {
+export const PlaygroundEmbed = ({ initialConfig, error }: { initialConfig?: UrlConfig; error?: Error }) => {
     const toast = useToast()
     const [apiKey, setApiKey] = useLocalStorage<string | null>("openai_api_key", null)
-    const { config: initialConfig, error } = useSearchParamConfig()
     const [config, setConfig] = useState<UrlConfig>(initialConfig ?? urlConfigSchema.getDefault())
     const [generating, setGenerating] = useState(false)
     const { isOpen: isAPIKeyInputOpen, onOpen: onAPIKeyInputOpen, onClose: onAPIKeyInputClose } = useDisclosure()
@@ -83,12 +80,12 @@ const EmbedPage = () => {
         }
     }, [isAPIKeyInputOpen])
 
-    if (!initialConfig) {
+    if (!config) {
         return (
             <Alert status="error">
                 <AlertIcon />
                 <AlertTitle>Failed to load config</AlertTitle>
-                <AlertDescription>No config parameter was provided in the URL</AlertDescription>
+                <AlertDescription>No config parameter was provided to the component</AlertDescription>
             </Alert>
         )
     }
@@ -104,6 +101,7 @@ const EmbedPage = () => {
             </Alert>
         )
     }
+
     return (
         <>
             <Flex direction="column" h="100vh">
@@ -126,5 +124,3 @@ const EmbedPage = () => {
         </>
     )
 }
-
-export default EmbedPage
