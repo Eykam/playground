@@ -1,5 +1,5 @@
 {
-    "name": "playground",
+    "name": "@eykam/playground",
     "description": "Playground embed for Learnprompting.org",
     "version": "0.0.1",
     "main": "./index.umd.js",
