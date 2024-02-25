@@ -29,9 +29,5 @@ export const PlaygroundWrapper = (props: PlaygroundProps) => {
 
     const { initialConfig, error } = getInitalConfig()
 
-    return (
-        <div style={props.style}>
-            <PlaygroundEmbed initialConfig={initialConfig} error={error} />
-        </div>
-    )
+    return <PlaygroundEmbed initialConfig={initialConfig} error={error} style={props.style || {}} />
 }

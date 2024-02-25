@@ -9,7 +9,15 @@ import ApiKeyInputModal from "../components/ApiKeyInputModal"
 import Footer from "../components/Footer"
 import Playground from "../components/Playground"
 
-export const PlaygroundEmbed = ({ initialConfig, error }: { initialConfig?: UrlConfig; error?: Error }) => {
+export const PlaygroundEmbed = ({
+    initialConfig,
+    error,
+    style,
+}: {
+    initialConfig?: UrlConfig
+    error?: Error
+    style: React.CSSProperties
+}) => {
     const toast = useToast()
     const [apiKey, setApiKey] = useLocalStorage<string | null>("openai_api_key", null)
     const [config, setConfig] = useState<UrlConfig>(initialConfig ?? urlConfigSchema.getDefault())
@@ -104,7 +112,7 @@ export const PlaygroundEmbed = ({ initialConfig, error }: { initialConfig?: UrlC
 
     return (
         <>
-            <Flex direction="column" h="100vh">
+            <Flex direction="column" style={style}>
                 <Playground
                     config={config}
                     generating={generating}
