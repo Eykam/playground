@@ -25,7 +25,9 @@ const Playground = ({
     return (
         <Flex direction={{ base: "column", sm: "row" }} p="2" gap="5" minH="0" h="100%">
             <Flex direction="column" gap="3" flex="1 1 0">
-                <Heading size="md">Prompt</Heading>
+                <Heading size="md" margin={0}>
+                    Prompt
+                </Heading>
                 <Textarea
                     placeholder="Write your prompt here"
                     flexBasis="100%"
@@ -63,7 +65,9 @@ const Playground = ({
                 </Flex>
             </Flex>
             <Flex direction="column" gap="3" flex="1 1 0" overflow="auto">
-                <Heading size="md">Output</Heading>
+                <Heading size="md" margin={0}>
+                    Output
+                </Heading>
                 <Mark
                     backgroundColor="green.100"
                     overflowWrap="break-word"
