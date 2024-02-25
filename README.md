@@ -63,6 +63,7 @@ interface PlaygroundProps {
     maxTokens?: number
     temperature?: number
     topP?: number
+    style?: React.CSSProperties
 }
 ```
 
@@ -76,6 +77,7 @@ if no props are provided it defaults to using the following config:
     maxTokens: 256;
     temperature: 0.7;
     topP: 1;
+    style: {}
 }
 ```
 
@@ -83,6 +85,12 @@ Example usage:
 
 ```
 <Playground model="gpt-4-32k" prompt="Testing this embed" output="Test output" />
+```
+
+You can also inject stlyes into the component:
+
+```
+<Playground model="gpt-4-32k" prompt="Testing this embed" output="Test output" style={{height:"50vh", width:"50vw"}}/>
 ```
 
 6. Finally, the Playground component must be wrapped in the ThemeProvider to access styles provided by @chakra-ui/react. Ex:

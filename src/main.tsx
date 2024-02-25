@@ -6,7 +6,7 @@ import HomePage from "./pages/HomePage"
 import { ChakraProvider } from "@chakra-ui/react"
 import theme from "./theme"
 
-export const BASE_URL = `${window.location.protocol}//${window.location.host}`
+export const BASE_URL = `https://embed.learnprompting.org/`
 
 const router = createBrowserRouter([
     {

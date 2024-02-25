@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react"
-import { BASE_URL } from "../main"
 import { encodeUrlConfig, UrlConfig, urlConfigSchema } from "../urlconfig"
 import { Flex, Alert, AlertDescription, AlertIcon, AlertTitle, useToast, useDisclosure } from "@chakra-ui/react"
 import { useLocalStorage } from "usehooks-ts"
@@ -8,6 +7,8 @@ import { Configuration, OpenAIApi } from "openai"
 import ApiKeyInputModal from "../components/ApiKeyInputModal"
 import Footer from "../components/Footer"
 import Playground from "../components/Playground"
+
+const BASE_URL = `https://embed.learnprompting.org/`
 
 export const PlaygroundEmbed = ({
     initialConfig,
