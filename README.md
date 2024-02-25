@@ -22,6 +22,7 @@ To edit the packaged components, you can directly edit the components in the /sr
 
 1. There is a Github Workflow implemented in the repo to automatically build and publish the package whenever changes are pushed to the main branch
 2. Before committing changes to the main branch, make sure to increment the version number in the package.json, otherwise the publishing workflow will fail. Ex: "version" : "0.0.1" -> "version" : "0.0.2"
+3. After updates are committed and new package is published, make sure to run npm install in projects consuming package to get updates
 
 ## Package usage
 
@@ -29,23 +30,25 @@ To edit the packaged components, you can directly edit the components in the /sr
 
 ```
 npm install @chakra-ui/react
-
 ```
 
 2. You have to tell npm that the package is coming from the github registry. Create or update existing .npmrc file in the root directory to include the following lines:
+
+```
+@eykam:registry=https://npm.pkg.github.com/
+//npm.pkg.github.com/:_authToken=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
+```
 
 3. You can now install the package using:
 
 ```
 npm install @eykam/playground
-
 ```
 
 4. The package exposes 2 components, Playground and ThemeProvider. These can be imported using the following code:
 
 ```
 import Playground, {ThemeProvider} from "@eykam/playground
-
 ```
 
 5. Playground accepts props:
@@ -59,7 +62,6 @@ interface PlaygroundProps {
     temperature?: number
     topP?: number
 }
-
 ```
 
 if no props are provided it defaults to using the following config:
@@ -79,7 +81,6 @@ Example usage:
 
 ```
 <Playground model="gpt-4-32k" prompt="Testing this embed" output="Test output" />
-
 ```
 
 6. Finally, the Playground component must be wrapped in the ThemeProvider to access styles provided by @chakra-ui/react. Ex:
